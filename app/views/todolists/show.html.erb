@@ -1,0 +1,29 @@
+<section class="show">
+    
+  <div class="show-title">
+    <h2>タイトル</h2>
+    <div>
+      <%= @list.title %>
+    </div>
+  </div>
+  
+  <div class="show-body">
+    <h2>本文</h2>
+    <div>
+      <%= @list.body %>
+    </div>
+  </div>
+  
+  <div class="show-image">
+    <h2>画像</h2>
+    <%= attachment_image_tag @list, :image, format: 'jpeg', size: "300x300" %>
+  </div>
+  <div class="show-link">
+    <div class="show-edit">
+    <%= link_to "投稿を編集", edit_todolist_path(@list.id) %>
+    </div>
+    <div class="show-delete">
+    <%= link_to "投稿を削除", destroy_todolist_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+    </div>
+  </>
+</section>
